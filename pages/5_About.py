@@ -1,4 +1,4 @@
-"""About page for the SpamShield AI Streamlit application."""
+"""About page for the SpamSense AI Streamlit application."""
 
 from __future__ import annotations
 
@@ -12,9 +12,9 @@ ASSETS_DIR = APP_CONFIG.paths.assets_dir
 
 # About page content follows
 
-st.title("About SpamShield AI")
+st.title("About SpamSense AI")
 st.write(
-    "SpamShield AI is a modular spam detection application that turns the original notebook workflow into a reusable, maintainable Streamlit product."
+    "SpamSense AI is a modular spam detection application that turns the original notebook workflow into a reusable, maintainable Streamlit product."
 )
 
 top_cols = st.columns(3)
@@ -141,9 +141,9 @@ with developer_tab:
             <div class='panel'>
                 <h3>Project Portals</h3>
                 <ul>
-                    <li><strong>GitHub Repository:</strong> <a href="https://github.com/yasheshmehta/SpamShield-AI" target="_blank">github.com/yasheshmehta/SpamShield-AI</a></li>
-                    <li><strong>LinkedIn Profile:</strong> <a href="https://linkedin.com/in/yasheshmehta" target="_blank">linkedin.com/in/yasheshmehta</a></li>
-                    <li><strong>Professional Portfolio:</strong> <a href="https://yasheshmehta.dev" target="_blank">yasheshmehta.dev</a></li>
+                    <li><strong>GitHub Repository:</strong> <a href="https://github.com/Yashesh1195/SpamSense-AI-NLP-based-Spam-Detection-System" target="_blank">github.com/Yashesh1195/SpamSense-AI</a></li>
+                    <li><strong>LinkedIn Profile:</strong> <a href="https://www.linkedin.com/in/yashesh-mehta/" target="_blank">linkedin.com/in/yashesh-mehta</a></li>
+                    <li><strong>Professional Portfolio:</strong> <a href="https://yasheshmehta.me/" target="_blank">yasheshmehta.me</a></li>
                 </ul>
             </div>
             """,
@@ -152,6 +152,6 @@ with developer_tab:
 
 st.divider()
 st.markdown(
-    "<div class='panel'><strong>Project summary:</strong> SpamShield AI turns a notebook-based text classification demo into a structured application with reusable runtime code and separate UI surfaces for prediction, analysis, and comparison.</div>",
+    "<div class='panel'><strong>Project summary:</strong> SpamSense AI turns a notebook-based text classification demo into a structured application with reusable runtime code and separate UI surfaces for prediction, analysis, and comparison.</div>",
     unsafe_allow_html=True,
 )

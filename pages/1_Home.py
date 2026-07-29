@@ -1,4 +1,4 @@
-"""Home page for the SpamShield AI Streamlit application."""
+"""Home page for the SpamSense AI Streamlit application."""
 
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ BANNER_PATH = ASSETS_DIR / "banner.png"
 st.markdown("<div class='panel'>", unsafe_allow_html=True)
 hero_left, hero_right = st.columns([1.1, 1.4], vertical_alignment="center")
 with hero_left:
-    st.markdown("<div style='font-size: 1.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: #60a5fa; font-weight: 700;'>SpamShield AI</div>", unsafe_allow_html=True)
+    st.markdown("<div style='font-size: 1.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: #60a5fa; font-weight: 700;'>SpamSense AI</div>", unsafe_allow_html=True)
     st.title("Intelligent Spam Detection Workspace")
     st.write(
         "A production-ready NLP application designed to detect spam SMS messages using count-based vectorization, TF-IDF weighting, and Word2Vec semantic embeddings mapped to multiple machine learning algorithms."
@@ -115,7 +115,7 @@ with architecture_tab:
     with arch_right:
         st.markdown("### Repository Layout")
         st.code(
-            """SpamShield-AI/
+            """SpamSense-AI/
 ├── app.py
 ├── pages/
 ├── src/
@@ -161,5 +161,5 @@ with roadmap_right:
     st.metric("Train/Test Test Size", safe_percentage(APP_CONFIG.test_size))
 
 st.caption(
-    "SpamShield AI is structured as a portfolio-ready ML project demonstrating clean code practices."
+    "SpamSense AI is structured as a portfolio-ready ML project demonstrating clean code practices."
 )

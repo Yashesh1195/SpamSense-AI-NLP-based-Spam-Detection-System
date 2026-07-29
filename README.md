@@ -1,6 +1,6 @@
-# SpamShield AI
+# SpamSense AI
 
-SpamShield AI is a modular Streamlit application for spam detection built from the original notebook workflow. It supports multiple text feature extraction and model combinations, exposes a prediction workspace, and includes pages for model comparison, exploratory analysis, and project documentation.
+SpamSense AI is a modular Streamlit application for spam detection built from the original notebook workflow. It supports multiple text feature extraction and model combinations, exposes a prediction workspace, and includes pages for model comparison, exploratory analysis, and project documentation.
 
 ## Features
 

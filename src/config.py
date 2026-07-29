@@ -1,4 +1,4 @@
-"""Application configuration for SpamShield AI.
+"""Application configuration for SpamSense AI.
 
 This module centralizes filesystem paths and lightweight runtime settings so
 other modules can stay focused on preprocessing, feature extraction, training,
@@ -11,7 +11,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Final
 
-PROJECT_NAME: Final[str] = "SpamShield AI"
+PROJECT_NAME: Final[str] = "SpamSense AI"
 DEFAULT_DATASET_FILENAME: Final[str] = "SMSSpamCollection"
 DEFAULT_TEST_SIZE: Final[float] = 0.2
 DEFAULT_RANDOM_STATE: Final[int] = 42

@@ -1,4 +1,4 @@
-"""Shared utility helpers for SpamShield AI.
+"""Shared utility helpers for SpamSense AI.
 
 This module contains cross-cutting helpers that do not belong to a single
 pipeline stage: logging, file I/O, dataframe formatting, and Streamlit-safe
@@ -166,7 +166,7 @@ def render_sidebar() -> str:
     st.sidebar.markdown(
         """
         <div style='text-align: center; margin-bottom: 1.25rem;'>
-            <h2 style='color: #60a5fa; margin-bottom: 0; font-family: sans-serif; font-weight: 700; font-size: 1.6rem;'>SpamShield AI</h2>
+            <h2 style='color: #60a5fa; margin-bottom: 0; font-family: sans-serif; font-weight: 700; font-size: 1.6rem;'>SpamSense AI</h2>
             <div style='color: #94a3b8; font-size: 0.82rem; margin-top: 0.15rem;'>Intelligent Spam Filter Dashboard</div>
         </div>
         """,

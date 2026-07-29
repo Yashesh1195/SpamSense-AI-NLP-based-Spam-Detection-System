@@ -1,4 +1,4 @@
-"""Future work page for the SpamShield AI Streamlit application."""
+"""Future work page for the SpamSense AI Streamlit application."""
 
 from __future__ import annotations
 
@@ -14,7 +14,7 @@ ASSETS_DIR = APP_CONFIG.paths.assets_dir
 
 st.title("Future Work & Roadmap")
 st.write(
-    "Track the implemented pipeline features and the upcoming enhancements planned for the SpamShield AI dashboard."
+    "Track the implemented pipeline features and the upcoming enhancements planned for the SpamSense AI dashboard."
 )
 
 top_cols = st.columns(3)

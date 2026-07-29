@@ -1,4 +1,4 @@
-"""Streamlit entrypoint for SpamShield AI.
+"""Streamlit entrypoint for SpamSense AI.
 
 This module acts as the central router for the multi-page Streamlit application
 using st.navigation.
@@ -21,7 +21,7 @@ ASSETS_DIR = APP_CONFIG.paths.assets_dir
 
 # Set global page config (must be called first and only once)
 st.set_page_config(
-    page_title="SpamShield AI",
+    page_title="SpamSense AI",
     page_icon=str(ASSETS_DIR / "favicon.ico") if (ASSETS_DIR / "favicon.ico").exists() else None,
     layout="wide",
     initial_sidebar_state="expanded",

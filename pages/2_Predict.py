@@ -1,4 +1,4 @@
-"""Prediction page for the SpamShield AI Streamlit application."""
+"""Prediction page for the SpamSense AI Streamlit application."""
 
 from __future__ import annotations
 
@@ -161,7 +161,7 @@ with batch_tab:
                     st.download_button(
                         "Download predictions CSV",
                         data=csv_data,
-                        file_name=f"spamshield_predictions_{feature_name}.csv",
+                        file_name=f"spamsense_predictions_{feature_name}.csv",
                         mime="text/csv",
                         use_container_width=True,
                     )
