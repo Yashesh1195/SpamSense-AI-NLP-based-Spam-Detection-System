@@ -1,0 +1,155 @@
+/* Production-grade Slate Dark Dashboard Theme for SpamShield AI */
+
+/* Import Outfit or Inter from Google Fonts for modern typography */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* Apply clean typography across the application */
+html, body, [class*="css"] {
+    font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Background Gradients */
+.stApp {
+    background: linear-gradient(180deg, #090e1a 0%, #0f172a 50%, #0b0f19 100%) !important;
+    color: #f1f5f9 !important;
+}
+
+/* Styled Sidebar */
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #0b1329 0%, #070b15 100%) !important;
+    border-right: 1px solid rgba(148, 163, 184, 0.08) !important;
+}
+
+/* Custom Cards */
+.panel, .hero-card, .section-card {
+    background: rgba(15, 23, 42, 0.65) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(148, 163, 184, 0.12) !important;
+    border-radius: 16px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22) !important;
+    margin-bottom: 1.25rem !important;
+    transition: transform 0.2s ease, border-color 0.2s ease !important;
+}
+
+.panel:hover, .hero-card:hover, .section-card:hover {
+    border-color: rgba(96, 165, 250, 0.35) !important;
+    transform: translateY(-2px);
+}
+
+/* Text Formatting */
+.muted-text, .muted {
+    color: #94a3b8 !important;
+    font-size: 0.9rem !important;
+}
+
+/* Accent Badges */
+.badge {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    margin: 0.2rem 0.25rem 0.2rem 0;
+    border-radius: 999px;
+    background: rgba(59, 130, 246, 0.1);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.22);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.badge-success {
+    background: rgba(16, 185, 129, 0.1) !important;
+    color: #34d399 !important;
+    border: 1px solid rgba(16, 185, 129, 0.22) !important;
+}
+
+.badge-error {
+    background: rgba(239, 68, 68, 0.1) !important;
+    color: #fca5a5 !important;
+    border: 1px solid rgba(239, 68, 68, 0.22) !important;
+}
+
+/* Prediction Result Badges */
+.result-spam {
+    background: rgba(239, 68, 68, 0.14) !important;
+    border: 1px solid rgba(239, 68, 68, 0.4) !important;
+    color: #fecaca !important;
+    border-radius: 12px !important;
+    display: inline-block !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+}
+
+.result-ham {
+    background: rgba(16, 185, 129, 0.12) !important;
+    border: 1px solid rgba(16, 185, 129, 0.35) !important;
+    color: #a7f3d0 !important;
+    border-radius: 12px !important;
+    display: inline-block !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+}
+
+/* Streamlit Button Styling Overrides */
+div.stButton > button:first-child {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 0.6rem 1.5rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em !important;
+    transition: opacity 0.2s ease, transform 0.1s ease !important;
+}
+
+div.stButton > button:first-child:hover {
+    opacity: 0.9 !important;
+    transform: scale(0.99) !important;
+}
+
+/* Streamlit Native Containers & Spacing */
+div[data-testid="stMetricVal"] > div {
+    font-weight: 700 !important;
+    color: #ffffff !important;
+}
+
+div[data-testid="stMetricLabel"] > div {
+    color: #94a3b8 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    font-size: 0.8rem !important;
+}
+
+/* Clean Custom Table Styles */
+.dataframe {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+.dataframe th {
+    background-color: rgba(15, 23, 42, 0.95) !important;
+    color: #60a5fa !important;
+    font-weight: 600 !important;
+    padding: 10px !important;
+    text-align: left !important;
+}
+
+.dataframe td {
+    padding: 10px !important;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.08) !important;
+}
+
+/* Emojis are hidden, Lucide Icons simulated or structured cleanly */
+.lucide-icon-placeholder {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}

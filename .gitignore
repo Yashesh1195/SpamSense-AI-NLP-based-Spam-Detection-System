@@ -1,0 +1,48 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Streamlit
+.streamlit/
+
+# Test and coverage artifacts
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Generated model and vectorizer artifacts
+models/*.pkl
+models/*.joblib
+vectorizers/*.pkl
+vectorizers/*.joblib
+
+# Data files that are typically generated or local-only
+data/*.csv
+data/*.tsv
+data/*.xlsx
+
+# Allow tracking of our specific trained model and vectorizer artifacts for Streamlit Cloud deployment
+!models/bow_nb.pkl
+!models/tfidf_lr.pkl
+!models/word2vec_rf.pkl
+!models/avg_word2vec_xgb.pkl
+!models/evaluation_results.json
+!vectorizers/bow.pkl
+!vectorizers/tfidf.pkl
+!vectorizers/word2vec.model
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
