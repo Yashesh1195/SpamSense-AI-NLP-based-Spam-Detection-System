@@ -67,7 +67,7 @@ with hero_right:
             """
             <div style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(96, 165, 250, 0.2); border-radius: 16px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid rgba(148, 163, 184, 0.12); padding-bottom: 0.75rem;">
-                    <div style="font-weight: 700; color: #f8fafc; font-size: 1.1rem;">Platform & Pipeline Specifications</div>
+                    <div style="font-weight: 700; color: #f8fafc; font-size: 1.1rem;">Platform Specifications</div>
                     <span style="background: rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3); border-radius: 12px; padding: 0.2rem 0.7rem; font-size: 0.78rem; font-weight: 600;">● Active System</span>
                 </div>
                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem; margin-bottom: 0;">
@@ -188,13 +188,48 @@ with architecture_tab:
         )
 
 with stack_tab:
-    st.markdown("### Core Stack")
-    technologies = ["Python", "Streamlit", "Pandas", "NumPy", "scikit-learn", "NLTK", "Plotly", "Joblib", "Gensim", "XGBoost"]
+    st.markdown("### Production Technology Stack")
+    
+    cat1, cat2 = st.columns(2)
+    with cat1:
+        st.markdown(
+            """
+            <div class='panel' style='padding: 1.1rem; margin-bottom: 1rem;'>
+                <h4 style='color: #60a5fa; margin-top: 0; margin-bottom: 0.6rem;'>Machine Learning & NLP Frameworks</h4>
+                <ul style='color: #cbd5e1; font-size: 0.88rem; padding-left: 1.2rem; margin-bottom: 0;'>
+                    <li style='margin-bottom: 0.4rem;'><strong>scikit-learn:</strong> MultinomialNB, Logistic Regression, Random Forest, TF-IDF & BoW vectorizers.</li>
+                    <li style='margin-bottom: 0.4rem;'><strong>Gensim:</strong> Word2Vec continuous neural word embeddings & average vector pooling.</li>
+                    <li style='margin-bottom: 0.4rem;'><strong>XGBoost:</strong> Gradient boosted decision tree estimator trained on dense vector spaces.</li>
+                    <li><strong>NLTK:</strong> Multi-stage text normalization, stopword filtering, and Porter Stemmer.</li>
+                </ul>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+    with cat2:
+        st.markdown(
+            """
+            <div class='panel' style='padding: 1.1rem; margin-bottom: 1rem;'>
+                <h4 style='color: #c084fc; margin-top: 0; margin-bottom: 0.6rem;'>UI, Analytics & Infrastructure</h4>
+                <ul style='color: #cbd5e1; font-size: 0.88rem; padding-left: 1.2rem; margin-bottom: 0;'>
+                    <li style='margin-bottom: 0.4rem;'><strong>Streamlit:</strong> Multipage router, dynamic state synchronization, and Slate Dark CSS.</li>
+                    <li style='margin-bottom: 0.4rem;'><strong>Plotly:</strong> Interactive confusion matrix heatmaps, n-gram frequency charts & histograms.</li>
+                    <li style='margin-bottom: 0.4rem;'><strong>Pandas & NumPy:</strong> Tabular data manipulation, array operations, and batch CSV scoring.</li>
+                    <li><strong>Joblib:</strong> Compressed binary model serialization for persisted estimator artifacts.</li>
+                </ul>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    st.markdown("### Ecosystem Badges")
+    technologies = ["Python 3.13", "Streamlit", "scikit-learn", "Gensim", "XGBoost", "NLTK", "Pandas", "NumPy", "Plotly", "Joblib"]
     st.markdown("".join(f"<span class='badge'>{item}</span>" for item in technologies), unsafe_allow_html=True)
-    st.markdown("### Dataset Details")
+
+    st.markdown("### Dataset Overview")
     st.info(
-        "Trained on the public SMS Spam Collection dataset containing 5,574 messages. "
-        "The corpus features an imbalanced class share (86.6% Ham / 13.4% Spam)."
+        "**SMS Spam Collection Corpus:** Trained and evaluated on 5,574 real-world SMS messages. "
+        "The dataset exhibits a natural class imbalance (86.6% Ham / 13.4% Spam), evaluated using a stratified 80/20 train/test split."
     )
 
 st.divider()
