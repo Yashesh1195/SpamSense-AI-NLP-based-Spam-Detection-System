@@ -39,10 +39,10 @@ hero_left, hero_right = st.columns([1.25, 1.0], vertical_alignment="center")
 with hero_left:
     st.markdown(
         """
-        <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em; color: #60a5fa; font-weight: 700; margin-bottom: 0.25rem;">
-            SpamSense AI • Machine Learning Platform
+        <div style="font-size: 2.1rem; text-transform: uppercase; letter-spacing: 0.15em; color: #60a5fa; font-weight: 700; margin-bottom: 0.25rem;">
+            SpamSense AI
         </div>
-        <h1 style="color: #f8fafc; font-size: 2.1rem; font-weight: 800; line-height: 1.25; margin: 0 0 1rem 0; border: none; padding: 0;">
+        <h1 style="color: #f8fafc; font-size: 1.75rem; font-weight: 800; line-height: 1.25; margin: 0 0 1rem 0; border: none; padding: 0;">
             Intelligent Spam Detection Workspace
         </h1>
         <p style="color: #94a3b8; font-size: 0.98rem; line-height: 1.6; margin-bottom: 1.25rem;">
@@ -54,7 +54,7 @@ with hero_left:
     st.markdown(
         "".join(
             f"<span class='badge'>{label}</span>"
-            for label in ["BoW", "TF-IDF", "Word2Vec", "Average Word2Vec", "Streamlit Cloud Ready"]
+            for label in ["BoW", "TF-IDF", "Word2Vec", "Average Word2Vec"]
         ),
         unsafe_allow_html=True,
     )
@@ -65,44 +65,44 @@ with hero_right:
     else:
         st.markdown(
             """
-            <div style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(96, 165, 250, 0.2); border-radius: 16px; padding: 1.4rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid rgba(148, 163, 184, 0.12); padding-bottom: 0.75rem;">
-                    <div style="font-weight: 700; color: #f8fafc; font-size: 1rem;">Pipeline Specifications</div>
-                    <span style="background: rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3); border-radius: 12px; padding: 0.15rem 0.6rem; font-size: 0.75rem; font-weight: 600;">● Active System</span>
+            <div style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(96, 165, 250, 0.2); border-radius: 16px; padding: 1.25rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem; border-bottom: 1px solid rgba(148, 163, 184, 0.12); padding-bottom: 0.65rem;">
+                    <div style="font-weight: 700; color: #f8fafc; font-size: 0.95rem;">Platform & Pipeline Specifications</div>
+                    <span style="background: rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3); border-radius: 12px; padding: 0.15rem 0.6rem; font-size: 0.72rem; font-weight: 600;">● Active System</span>
                 </div>
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.85rem; margin-bottom: 1rem;">
-                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.75rem; border: 1px solid rgba(148, 163, 184, 0.08);">
-                        <div style="color: #94a3b8; font-size: 0.72rem; text-transform: uppercase; font-weight: 600;">Dataset Size</div>
-                        <div style="color: #60a5fa; font-size: 1.2rem; font-weight: 700; margin-top: 0.15rem;">5,574 <span style="font-size: 0.75rem; color: #cbd5e1; font-weight: 400;">SMS</span></div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.65rem; margin-bottom: 0.85rem;">
+                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.6rem 0.5rem; border: 1px solid rgba(148, 163, 184, 0.08); text-align: center;">
+                        <div style="color: #94a3b8; font-size: 0.68rem; text-transform: uppercase; font-weight: 600;">Extractors</div>
+                        <div style="color: #60a5fa; font-size: 1.15rem; font-weight: 700; margin-top: 0.1rem;">4 <span style="font-size: 0.7rem; color: #cbd5e1; font-weight: 400;">Methods</span></div>
                     </div>
-                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.75rem; border: 1px solid rgba(148, 163, 184, 0.08);">
-                        <div style="color: #94a3b8; font-size: 0.72rem; text-transform: uppercase; font-weight: 600;">Max Vocabulary</div>
-                        <div style="color: #c084fc; font-size: 1.2rem; font-weight: 700; margin-top: 0.15rem;">2,500 <span style="font-size: 0.75rem; color: #cbd5e1; font-weight: 400;">Terms</span></div>
+                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.6rem 0.5rem; border: 1px solid rgba(148, 163, 184, 0.08); text-align: center;">
+                        <div style="color: #94a3b8; font-size: 0.68rem; text-transform: uppercase; font-weight: 600;">Estimators</div>
+                        <div style="color: #c084fc; font-size: 1.15rem; font-weight: 700; margin-top: 0.1rem;">4 <span style="font-size: 0.7rem; color: #cbd5e1; font-weight: 400;">Models</span></div>
                     </div>
-                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.75rem; border: 1px solid rgba(148, 163, 184, 0.08);">
-                        <div style="color: #94a3b8; font-size: 0.72rem; text-transform: uppercase; font-weight: 600;">Estimator Models</div>
-                        <div style="color: #38bdf8; font-size: 1.2rem; font-weight: 700; margin-top: 0.15rem;">4 <span style="font-size: 0.75rem; color: #cbd5e1; font-weight: 400;">Algorithms</span></div>
+                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.6rem 0.5rem; border: 1px solid rgba(148, 163, 184, 0.08); text-align: center;">
+                        <div style="color: #94a3b8; font-size: 0.68rem; text-transform: uppercase; font-weight: 600;">Pipeline</div>
+                        <div style="color: #38bdf8; font-size: 1.15rem; font-weight: 700; margin-top: 0.1rem;">7 <span style="font-size: 0.7rem; color: #cbd5e1; font-weight: 400;">Stages</span></div>
                     </div>
-                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.75rem; border: 1px solid rgba(148, 163, 184, 0.08);">
-                        <div style="color: #94a3b8; font-size: 0.72rem; text-transform: uppercase; font-weight: 600;">Word2Vec Dim</div>
-                        <div style="color: #f472b6; font-size: 1.2rem; font-weight: 700; margin-top: 0.15rem;">100 <span style="font-size: 0.75rem; color: #cbd5e1; font-weight: 400;">Vector Dim</span></div>
+                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.6rem 0.5rem; border: 1px solid rgba(148, 163, 184, 0.08); text-align: center;">
+                        <div style="color: #94a3b8; font-size: 0.68rem; text-transform: uppercase; font-weight: 600;">Corpus Size</div>
+                        <div style="color: #4ade80; font-size: 1.15rem; font-weight: 700; margin-top: 0.1rem;">5,574 <span style="font-size: 0.7rem; color: #cbd5e1; font-weight: 400;">SMS</span></div>
+                    </div>
+                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.6rem 0.5rem; border: 1px solid rgba(148, 163, 184, 0.08); text-align: center;">
+                        <div style="color: #94a3b8; font-size: 0.68rem; text-transform: uppercase; font-weight: 600;">Max Vocab</div>
+                        <div style="color: #f472b6; font-size: 1.15rem; font-weight: 700; margin-top: 0.1rem;">2,500 <span style="font-size: 0.7rem; color: #cbd5e1; font-weight: 400;">Terms</span></div>
+                    </div>
+                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.6rem 0.5rem; border: 1px solid rgba(148, 163, 184, 0.08); text-align: center;">
+                        <div style="color: #94a3b8; font-size: 0.68rem; text-transform: uppercase; font-weight: 600;">Deployment</div>
+                        <div style="color: #facc15; font-size: 1.15rem; font-weight: 700; margin-top: 0.1rem;">Cloud <span style="font-size: 0.7rem; color: #cbd5e1; font-weight: 400;">Ready</span></div>
                     </div>
                 </div>
-                <div style="background: rgba(96, 165, 250, 0.08); border-radius: 8px; padding: 0.55rem 0.8rem; border: 1px solid rgba(96, 165, 250, 0.15); font-size: 0.78rem; color: #cbd5e1;">
-                    ⚡ <strong>Pipeline:</strong> Normalization → Tokenization → Stopwords → Stemming → Vectorization
+                <div style="background: rgba(96, 165, 250, 0.08); border-radius: 8px; padding: 0.5rem 0.75rem; border: 1px solid rgba(96, 165, 250, 0.15); font-size: 0.75rem; color: #cbd5e1; text-align: center;">
+                    <strong>Pipeline Sequence:</strong> Clean → Tokenize → Stopwords → Stemming → Vectorize → Predict
                 </div>
             </div>
             """,
             unsafe_allow_html=True,
         )
-
-st.divider()
-
-metric_cols = st.columns(4)
-metric_cols[0].metric("Feature Techniques", "4", help="BoW, TF-IDF, Word2Vec, Average Word2Vec")
-metric_cols[1].metric("Model Families", "4", help="NB, Logistic Regression, Random Forest, XGBoost")
-metric_cols[2].metric("Pipeline Stages", "7", help="Input to confidence score")
-metric_cols[3].metric("Deployment Ready", "Yes", help="Designed for Streamlit Community Cloud")
 
 st.divider()
 
