@@ -71,6 +71,13 @@ The runtime code in `src/` is organized to support a separate training step:
 - `5_About.py` - project documentation.
 - `6_Future_Work.py` - roadmap and next steps.
 
+## UI & Theme Color System
+
+The application uses a Slate Dark theme featuring semantic status color coding:
+
+- **`#ef4444` (Rose Red)**: Used for Spam / Junk classification highlights, threat indicators, and risk alerts.
+- **`#22c55e` (Emerald Green)**: Used for Legitimate (Ham) classification highlights, active status badges, and positive metrics.
+
 ## Deployment
 
 This project is intended to deploy to Streamlit Community Cloud.

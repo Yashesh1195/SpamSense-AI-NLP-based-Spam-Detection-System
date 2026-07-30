@@ -1,10 +1,11 @@
-/* Production-grade Slate Dark Dashboard Theme for SpamSense AI */
-
+Production-grade Slate Dark Dashboard Theme for SpamSense AI
 /* Import Outfit or Inter from Google Fonts for modern typography */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
 /* Apply clean typography across the application */
-html, body, [class*="css"] {
+html,
+body,
+[class*="css"] {
     font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -21,7 +22,9 @@ html, body, [class*="css"] {
 }
 
 /* Custom Cards */
-.panel, .hero-card, .section-card {
+.panel,
+.hero-card,
+.section-card {
     background: rgba(15, 23, 42, 0.65) !important;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -33,13 +36,16 @@ html, body, [class*="css"] {
     transition: transform 0.2s ease, border-color 0.2s ease !important;
 }
 
-.panel:hover, .hero-card:hover, .section-card:hover {
+.panel:hover,
+.hero-card:hover,
+.section-card:hover {
     border-color: rgba(96, 165, 250, 0.35) !important;
     transform: translateY(-2px);
 }
 
 /* Text Formatting */
-.muted-text, .muted {
+.muted-text,
+.muted {
     color: #94a3b8 !important;
     font-size: 0.9rem !important;
 }
@@ -67,6 +73,50 @@ html, body, [class*="css"] {
     background: rgba(239, 68, 68, 0.1) !important;
     color: #fca5a5 !important;
     border: 1px solid rgba(239, 68, 68, 0.22) !important;
+}
+
+/* Radio Selection Dark Overrides (Transparent & Borderless inside parent card) */
+div[data-testid="stRadio"] {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    width: 100% !important;
+}
+
+div[data-testid="stRadio"] label p {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    color: #f1f5f9 !important;
+    padding: 0.15rem 0 !important;
+    transition: color 0.15s ease !important;
+}
+
+div[data-testid="stRadio"] div[role="radiogroup"] {
+    gap: 0.65rem !important;
+}
+
+div[data-testid="stRadio"] label:hover p {
+    color: #60a5fa !important;
+}
+
+/* Card styling for top-level Predict columns */
+div[data-testid="stColumn"]:has(div[role="radiogroup"]),
+div[data-testid="stColumn"]:has(code) {
+    background: rgba(15, 23, 42, 0.75) !important;
+    border: 1px solid rgba(96, 165, 250, 0.2) !important;
+    border-radius: 16px !important;
+    padding: 1.25rem 1.5rem !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Make nested sub-columns inside cards transparent */
+div[data-testid="stColumn"] div[data-testid="stColumn"] {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
 }
 
 /* Prediction Result Badges */
@@ -97,7 +147,7 @@ html, body, [class*="css"] {
 }
 
 /* Streamlit Button Styling Overrides */
-div.stButton > button:first-child {
+div.stButton>button:first-child {
     background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
     color: #ffffff !important;
     border: none !important;
@@ -108,18 +158,18 @@ div.stButton > button:first-child {
     transition: opacity 0.2s ease, transform 0.1s ease !important;
 }
 
-div.stButton > button:first-child:hover {
+div.stButton>button:first-child:hover {
     opacity: 0.9 !important;
     transform: scale(0.99) !important;
 }
 
 /* Streamlit Native Containers & Spacing */
-div[data-testid="stMetricVal"] > div {
+div[data-testid="stMetricVal"]>div {
     font-weight: 700 !important;
     color: #ffffff !important;
 }
 
-div[data-testid="stMetricLabel"] > div {
+div[data-testid="stMetricLabel"]>div {
     color: #94a3b8 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.08em !important;

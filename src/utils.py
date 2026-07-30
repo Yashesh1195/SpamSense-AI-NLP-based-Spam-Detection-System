@@ -162,57 +162,13 @@ def render_sidebar() -> str:
     if "active_feature" not in st.session_state:
         st.session_state.active_feature = "tfidf"
 
+
     # Project Branding
     st.sidebar.markdown(
         """
         <div style='text-align: center; margin-bottom: 1.25rem;'>
             <h2 style='color: #60a5fa; margin-bottom: 0; font-family: sans-serif; font-weight: 700; font-size: 1.6rem;'>SpamSense AI</h2>
             <div style='color: #94a3b8; font-size: 0.82rem; margin-top: 0.15rem;'>Intelligent Spam Filter Dashboard</div>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-    
-    st.sidebar.divider()
-    
-    # Feature Extractor Radio Selection
-    st.sidebar.markdown("### Extraction Configuration")
-    feature_options = [FEATURE_BOW, FEATURE_TFIDF, FEATURE_WORD2VEC, FEATURE_AVG_WORD2VEC]
-    active_idx = feature_options.index(st.session_state.active_feature)
-    
-    selected_feature = st.sidebar.radio(
-        "Active Extractor Option:",
-        feature_options,
-        format_func=lambda x: FEATURE_DISPLAY_NAMES.get(x, x),
-        index=active_idx,
-        help="Choose the feature extraction strategy. The application resolves the model automatically.",
-        label_visibility="collapsed"
-    )
-    
-    # Rerun on changes to maintain strict state consistency
-    if selected_feature != st.session_state.active_feature:
-        st.session_state.active_feature = selected_feature
-        st.rerun()
-        
-    st.sidebar.divider()
-    
-    # Model Metadata Resolution
-    model_mapping = {
-        FEATURE_BOW: ("Naive Bayes", "bow_nb.pkl", "MultinomialNB"),
-        FEATURE_TFIDF: ("Logistic Regression", "tfidf_lr.pkl", "LogisticRegression"),
-        FEATURE_WORD2VEC: ("Random Forest", "word2vec_rf.pkl", "RandomForestClassifier"),
-        FEATURE_AVG_WORD2VEC: ("XGBoost", "avg_word2vec_xgb.pkl", "XGBClassifier"),
-    }
-    display_model, filename, class_name = model_mapping[selected_feature]
-    
-    st.sidebar.markdown("### Pipeline Metadata")
-    st.sidebar.markdown(
-        f"""
-        <div style='background: rgba(15, 23, 42, 0.45); border: 1px solid rgba(148, 163, 184, 0.12); border-radius: 12px; padding: 0.8rem;'>
-            <div style='font-size: 0.78rem; text-transform: uppercase; color: #60a5fa;'>Resolved Model</div>
-            <div style='font-weight: 600; font-size: 0.95rem; color: #e5e7eb; margin-top: 0.1rem;'>{display_model}</div>
-            <div style='font-size: 0.78rem; color: #94a3b8; margin-top: 0.35rem;'>Class: <code>{class_name}</code></div>
-            <div style='font-size: 0.78rem; color: #94a3b8;'>File: <code>{filename}</code></div>
         </div>
         """,
         unsafe_allow_html=True
@@ -233,4 +189,4 @@ def render_sidebar() -> str:
         unsafe_allow_html=True
     )
     
-    return selected_feature
+    return st.session_state.get("active_feature", "tfidf")

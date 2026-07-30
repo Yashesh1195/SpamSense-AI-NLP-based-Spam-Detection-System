@@ -56,14 +56,14 @@ with roadmap_tab:
             """,
             unsafe_allow_html=True
         )
-        
+
         st.markdown(
             """
             <div class='panel'>
                 <span class='badge' style='background: rgba(245, 158, 11, 0.1); color: #fbbf24; border-color: rgba(245, 158, 11, 0.25);'>IN PROGRESS</span>
-                <span class='badge'>v1.2.0</span>
-                <h4 style='margin-top: 0.5rem; margin-bottom: 0.25rem; color: #fff;'>Explainability (LIME/SHAP)</h4>
-                <p class="muted">Integrate Local Interpretable Model-agnostic Explanations (LIME) to highlight token-level contributions directly in the prediction interface.</p>
+                <span class='badge'>v1.1.0</span>
+                <h4 style='margin-top: 0.5rem; margin-bottom: 0.25rem; color: #fff;'>Hyperparameter Optimization</h4>
+                <p class="muted">Add Optuna-driven grid-search loops during training to automate regularization checks and find the best weights for Naive Bayes, LR, and RF models.</p>
             </div>
             """,
             unsafe_allow_html=True
@@ -82,17 +82,6 @@ with roadmap_tab:
             unsafe_allow_html=True
         )
         
-        st.markdown(
-            """
-            <div class='panel'>
-                <span class='badge' style='background: rgba(148, 163, 184, 0.1); color: #94a3b8; border-color: rgba(148, 163, 184, 0.2);'>PLANNED</span>
-                <span class='badge'>v1.1.0</span>
-                <h4 style='margin-top: 0.5rem; margin-bottom: 0.25rem; color: #fff;'>Hyperparameter Optimization</h4>
-                <p class="muted">Add Optuna-driven grid-search loops during training to automate regularization checks and find the best weights for Naive Bayes, LR, and RF models.</p>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
 
         st.markdown(
             """
@@ -101,6 +90,18 @@ with roadmap_tab:
                 <span class='badge'>v1.0.0</span>
                 <h4 style='margin-top: 0.5rem; margin-bottom: 0.25rem; color: #fff;'>Cloud Deployment</h4>
                 <p class="muted">Fully deployable structure on Streamlit Community Cloud with automated NLTK package downloads, and precompiled wheels setup.</p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+        st.markdown(
+            """
+            <div class='panel'>
+                <span class='badge' style='background: rgba(148, 163, 184, 0.1); color: #94a3b8; border-color: rgba(148, 163, 184, 0.2);'>PLANNED</span>
+                <span class='badge'>v1.2.0</span>
+                <h4 style='margin-top: 0.5rem; margin-bottom: 0.25rem; color: #fff;'>Explainability (LIME/SHAP)</h4>
+                <p class="muted">Integrate Local Interpretable Model-agnostic Explanations (LIME) to highlight token-level contributions directly in the prediction interface.</p>
             </div>
             """,
             unsafe_allow_html=True

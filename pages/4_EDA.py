@@ -121,32 +121,65 @@ with tab1:
 
 # Tab 2: Spam Distribution
 with tab2:
-    st.markdown("### Class Label Share")
-    class_counts = analysis_df["label"].value_counts().reset_index()
-    class_counts.columns = ["label", "count"]
+    class_counts = analysis_df["label"].value_counts().to_dict()
+    ham_count = class_counts.get("ham", 0)
+    spam_count = class_counts.get("spam", 0)
+    total_count = ham_count + spam_count
+    ham_pct = (ham_count / max(total_count, 1)) * 100
+    spam_pct = (spam_count / max(total_count, 1)) * 100
+    imbalance_ratio = ham_count / max(spam_count, 1)
+
+    pie_cols = st.columns([1.0, 1.2], vertical_alignment="top")
     
-    pie_cols = st.columns([1, 1.2])
     with pie_cols[0]:
-        st.markdown("<br /><br />", unsafe_allow_html=True)
-        st.dataframe(class_counts, use_container_width=True, hide_index=True)
+        st.markdown("### Class Label Share")
+        cards_html = f"""
+<div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.2rem;">
+    <div style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 14px; padding: 1rem 1.25rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-weight: 600; color: #a7f3d0; font-size: 0.9rem;">Legitimate (Ham)</span>
+            <span style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 0.15rem 0.5rem; font-size: 0.75rem; font-weight: 600;">{ham_pct:.1f}%</span>
+        </div>
+        <div style="font-weight: 700; font-size: 1.6rem; color: #f8fafc; margin-top: 0.25rem;">{ham_count:,} <span style="font-weight: 400; font-size: 0.85rem; color: #94a3b8;">messages</span></div>
+    </div>
+    <div style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 14px; padding: 1rem 1.25rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-weight: 600; color: #fecaca; font-size: 0.9rem;">Junk / Spam</span>
+            <span style="background: rgba(239, 68, 68, 0.15); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; padding: 0.15rem 0.5rem; font-size: 0.75rem; font-weight: 600;">{spam_pct:.1f}%</span>
+        </div>
+        <div style="font-weight: 700; font-size: 1.6rem; color: #f8fafc; margin-top: 0.25rem;">{spam_count:,} <span style="font-weight: 400; font-size: 0.85rem; color: #94a3b8;">messages</span></div>
+    </div>
+    <div style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(96, 165, 250, 0.25); border-radius: 14px; padding: 1rem 1.25rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-weight: 600; color: #93c5fd; font-size: 0.9rem;">Class Imbalance Ratio</span>
+            <span style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 8px; padding: 0.15rem 0.5rem; font-size: 0.75rem; font-weight: 600;">Imbalanced</span>
+        </div>
+        <div style="font-weight: 700; font-size: 1.6rem; color: #f8fafc; margin-top: 0.25rem;">{imbalance_ratio:.2f} : 1 <span style="font-weight: 400; font-size: 0.85rem; color: #94a3b8;">Ham-to-Spam</span></div>
+    </div>
+</div>
+"""
+        st.markdown(cards_html, unsafe_allow_html=True)
         
-        ham_count = class_counts.loc[class_counts["label"] == "ham", "count"].values[0] if "ham" in class_counts["label"].values else 0
-        spam_count = class_counts.loc[class_counts["label"] == "spam", "count"].values[0] if "spam" in class_counts["label"].values else 0
-        st.markdown(f"""
-        - **Legitimate (Ham):** {ham_count:,} messages
-        - **Junk/Spam:** {spam_count:,} messages
-        - **Imbalance Ratio:** {ham_count/max(spam_count, 1):.1f}:1
-        """)
     with pie_cols[1]:
+        st.markdown("### Class Proportion (Ham vs Spam)")
+        df_pie = pd.DataFrame([
+            {"Label": "Legitimate (Ham)", "Count": ham_count},
+            {"Label": "Junk / Spam", "Count": spam_count},
+        ])
         pie_fig = px.pie(
-            class_counts,
-            names="label",
-            values="count",
-            hole=0.4,
+            df_pie,
+            names="Label",
+            values="Count",
+            hole=0.45,
             template="plotly_dark",
-            color="label",
-            color_discrete_map={"ham": "#10b981", "spam": "#ef4444"},
-            title="Distribution Share of Ham vs Spam Messages"
+            color="Label",
+            color_discrete_map={"Legitimate (Ham)": "#10b981", "Junk / Spam": "#ef4444"},
+        )
+        pie_fig.update_traces(textinfo="percent+label", pull=[0, 0.05])
+        pie_fig.update_layout(
+            margin=dict(t=10, b=10, l=15, r=15),
+            height=300,
+            showlegend=False
         )
         st.plotly_chart(pie_fig, use_container_width=True)
 
@@ -255,7 +288,7 @@ with tab6:
             orientation="h",
             template="plotly_dark",
             color="count",
-            color_continuous_scale="Teals",
+            color_continuous_scale="teal",
             labels={"trigram": "Trigram Sequence", "count": "Frequency"},
             title="Top 15 Most Common Trigrams",
         )
@@ -264,5 +297,5 @@ with tab6:
 
 st.divider()
 st.caption(
-    "Visualizations are computed dynamically on load using Plotly templates suited for dark dashboard environments."
+    "SpamSense AI EDA Module — Real-time corpus statistics, character distribution, and n-gram frequency analysis powered by Plotly."
 )
