@@ -19,10 +19,13 @@ LOGGER = logging.getLogger(__name__)
 APP_CONFIG = get_config()
 ASSETS_DIR = APP_CONFIG.paths.assets_dir
 
+# Resolve custom favicon image path
+FAVICON_PATH = ASSETS_DIR / "favicon.png" if (ASSETS_DIR / "favicon.png").exists() else (ASSETS_DIR / "favicon.ico")
+
 # Set global page config (must be called first and only once)
 st.set_page_config(
     page_title="SpamSense AI",
-    page_icon=str(ASSETS_DIR / "favicon.ico") if (ASSETS_DIR / "favicon.ico").exists() else None,
+    page_icon=str(FAVICON_PATH) if FAVICON_PATH.exists() else "📩",
     layout="wide",
     initial_sidebar_state="expanded",
 )
