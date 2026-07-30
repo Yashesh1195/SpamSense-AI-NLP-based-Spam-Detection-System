@@ -18,7 +18,23 @@ PROJECT_ROOT = APP_CONFIG.paths.root
 ASSETS_DIR = APP_CONFIG.paths.assets_dir
 BANNER_PATH = ASSETS_DIR / "banner.png"
 
-st.markdown("<div class='panel'>", unsafe_allow_html=True)
+# System Operational Status Banner
+st.markdown(
+    """
+    <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(96, 165, 250, 0.25); border-radius: 12px; padding: 0.65rem 1.25rem; display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+        <div>
+            <span style="color: #4ade80; font-size: 0.85rem; font-weight: 600;">● SYSTEM OPERATIONAL</span>
+            <span style="color: #64748b; margin: 0 0.5rem;">|</span>
+            <span style="color: #cbd5e1; font-size: 0.85rem; font-weight: 500;">Production NLP Spam Detection Engine</span>
+        </div>
+        <div>
+            <span style="background: rgba(96, 165, 250, 0.15); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.3); border-radius: 20px; padding: 0.25rem 0.75rem; font-size: 0.78rem; font-weight: 600;">v1.0.0</span>
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
 hero_left, hero_right = st.columns([1.1, 1.4], vertical_alignment="center")
 with hero_left:
     st.markdown("<div style='font-size: 1.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: #60a5fa; font-weight: 700;'>SpamSense AI</div>", unsafe_allow_html=True)
@@ -46,7 +62,6 @@ with hero_right:
             """,
             unsafe_allow_html=True,
         )
-st.markdown("</div>", unsafe_allow_html=True)
 
 st.divider()
 
@@ -55,6 +70,14 @@ metric_cols[0].metric("Feature Techniques", "4", help="BoW, TF-IDF, Word2Vec, Av
 metric_cols[1].metric("Model Families", "4", help="NB, Logistic Regression, Random Forest, XGBoost")
 metric_cols[2].metric("Pipeline Stages", "7", help="Input to confidence score")
 metric_cols[3].metric("Deployment Ready", "Yes", help="Designed for Streamlit Community Cloud")
+
+st.divider()
+
+st.markdown("### Dataset & Stratification Settings")
+strat_cols = st.columns(3)
+strat_cols[0].metric("Spam Target Label", "1 (Spam)", help="Positive class for spam identification")
+strat_cols[1].metric("Ham Target Label", "0 (Ham)", help="Negative class for legitimate messages")
+strat_cols[2].metric("Test Split Ratio", safe_percentage(APP_CONFIG.test_size), help="Held-out evaluation split percentage")
 
 st.divider()
 
@@ -140,12 +163,6 @@ with stack_tab:
     )
 
 st.divider()
-
-st.markdown("### Dataset & Stratification Settings")
-strat_cols = st.columns(3)
-strat_cols[0].metric("Spam Target Label", "1 (Spam)", help="Positive class for spam identification")
-strat_cols[1].metric("Ham Target Label", "0 (Ham)", help="Negative class for legitimate messages")
-strat_cols[2].metric("Test Split Ratio", safe_percentage(APP_CONFIG.test_size), help="Held-out evaluation split percentage")
 
 # Future Roadmap (Commented out)
 # st.markdown("### Future Roadmap")
