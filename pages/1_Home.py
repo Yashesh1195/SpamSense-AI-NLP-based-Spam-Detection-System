@@ -141,24 +141,23 @@ with stack_tab:
 
 st.divider()
 
-roadmap_left, roadmap_right = st.columns(2)
-with roadmap_left:
-    st.markdown("### Future Roadmap")
-    roadmap_items = [
-        "Optimize Word2Vec semantic word embeddings",
-        "Experiment with CBOW and Skip-Gram configurations",
-        "Introduce grid-search hyperparameter tuning",
-        "Integrate Explainable AI (LIME or SHAP charts)",
-        "Build cloud deployment pipeline with auto-scaling",
-    ]
-    for item in roadmap_items:
-        st.checkbox(item, value=False, disabled=True)
+st.markdown("### Dataset & Stratification Settings")
+strat_cols = st.columns(3)
+strat_cols[0].metric("Spam Target Label", "1 (Spam)", help="Positive class for spam identification")
+strat_cols[1].metric("Ham Target Label", "0 (Ham)", help="Negative class for legitimate messages")
+strat_cols[2].metric("Test Split Ratio", safe_percentage(APP_CONFIG.test_size), help="Held-out evaluation split percentage")
 
-with roadmap_right:
-    st.markdown("### Stratification Constants")
-    st.metric("Spam Target Class", "1 (Spam)")
-    st.metric("Ham Target Class", "0 (Ham)")
-    st.metric("Train/Test Test Size", safe_percentage(APP_CONFIG.test_size))
+# Future Roadmap (Commented out)
+# st.markdown("### Future Roadmap")
+# roadmap_items = [
+#     "Optimize Word2Vec semantic word embeddings",
+#     "Experiment with CBOW and Skip-Gram configurations",
+#     "Introduce grid-search hyperparameter tuning",
+#     "Integrate Explainable AI (LIME or SHAP charts)",
+#     "Build cloud deployment pipeline with auto-scaling",
+# ]
+# for item in roadmap_items:
+#     st.checkbox(item, value=False, disabled=True)
 
 st.caption(
     "SpamSense AI is structured as a portfolio-ready ML project demonstrating clean code practices."
