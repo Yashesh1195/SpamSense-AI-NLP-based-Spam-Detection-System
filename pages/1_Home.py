@@ -177,5 +177,5 @@ st.divider()
 #     st.checkbox(item, value=False, disabled=True)
 
 st.caption(
-    "SpamSense AI is structured as a portfolio-ready ML project demonstrating clean code practices."
+    "SpamSense AI — An end-to-end Machine Learning suite for real-time text classification, semantic embeddings, and interactive NLP analytics."
 )
