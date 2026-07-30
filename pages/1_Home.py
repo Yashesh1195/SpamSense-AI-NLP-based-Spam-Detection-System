@@ -65,40 +65,42 @@ with hero_right:
     else:
         st.markdown(
             """
-            <div style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(96, 165, 250, 0.2); border-radius: 16px; padding: 1.25rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem; border-bottom: 1px solid rgba(148, 163, 184, 0.12); padding-bottom: 0.65rem;">
-                    <div style="font-weight: 700; color: #f8fafc; font-size: 0.95rem;">Platform & Pipeline Specifications</div>
-                    <span style="background: rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3); border-radius: 12px; padding: 0.15rem 0.6rem; font-size: 0.72rem; font-weight: 600;">● Active System</span>
+            <div style="background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(96, 165, 250, 0.2); border-radius: 16px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid rgba(148, 163, 184, 0.12); padding-bottom: 0.75rem;">
+                    <div style="font-weight: 700; color: #f8fafc; font-size: 1.1rem;">Platform & Pipeline Specifications</div>
+                    <span style="background: rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3); border-radius: 12px; padding: 0.2rem 0.7rem; font-size: 0.78rem; font-weight: 600;">● Active System</span>
                 </div>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.65rem; margin-bottom: 0.85rem;">
-                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.6rem 0.5rem; border: 1px solid rgba(148, 163, 184, 0.08); text-align: center;">
-                        <div style="color: #94a3b8; font-size: 0.68rem; text-transform: uppercase; font-weight: 600;">Extractors</div>
-                        <div style="color: #60a5fa; font-size: 1.15rem; font-weight: 700; margin-top: 0.1rem;">4 <span style="font-size: 0.7rem; color: #cbd5e1; font-weight: 400;">Methods</span></div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem; margin-bottom: 0;">
+                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.85rem 0.6rem; border: 1px solid rgba(148, 163, 184, 0.08); text-align: center;">
+                        <div style="color: #94a3b8; font-size: 0.78rem; text-transform: uppercase; font-weight: 600;">Extractors</div>
+                        <div style="color: #60a5fa; font-size: 1.35rem; font-weight: 700; margin-top: 0.15rem;">4 <span style="font-size: 0.78rem; color: #cbd5e1; font-weight: 400;">Methods</span></div>
                     </div>
-                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.6rem 0.5rem; border: 1px solid rgba(148, 163, 184, 0.08); text-align: center;">
-                        <div style="color: #94a3b8; font-size: 0.68rem; text-transform: uppercase; font-weight: 600;">Estimators</div>
-                        <div style="color: #c084fc; font-size: 1.15rem; font-weight: 700; margin-top: 0.1rem;">4 <span style="font-size: 0.7rem; color: #cbd5e1; font-weight: 400;">Models</span></div>
+                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.85rem 0.6rem; border: 1px solid rgba(148, 163, 184, 0.08); text-align: center;">
+                        <div style="color: #94a3b8; font-size: 0.78rem; text-transform: uppercase; font-weight: 600;">Estimators</div>
+                        <div style="color: #c084fc; font-size: 1.35rem; font-weight: 700; margin-top: 0.15rem;">4 <span style="font-size: 0.78rem; color: #cbd5e1; font-weight: 400;">Models</span></div>
                     </div>
-                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.6rem 0.5rem; border: 1px solid rgba(148, 163, 184, 0.08); text-align: center;">
-                        <div style="color: #94a3b8; font-size: 0.68rem; text-transform: uppercase; font-weight: 600;">Pipeline</div>
-                        <div style="color: #38bdf8; font-size: 1.15rem; font-weight: 700; margin-top: 0.1rem;">7 <span style="font-size: 0.7rem; color: #cbd5e1; font-weight: 400;">Stages</span></div>
+                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.85rem 0.6rem; border: 1px solid rgba(148, 163, 184, 0.08); text-align: center;">
+                        <div style="color: #94a3b8; font-size: 0.78rem; text-transform: uppercase; font-weight: 600;">Pipeline</div>
+                        <div style="color: #38bdf8; font-size: 1.35rem; font-weight: 700; margin-top: 0.15rem;">7 <span style="font-size: 0.78rem; color: #cbd5e1; font-weight: 400;">Stages</span></div>
                     </div>
-                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.6rem 0.5rem; border: 1px solid rgba(148, 163, 184, 0.08); text-align: center;">
-                        <div style="color: #94a3b8; font-size: 0.68rem; text-transform: uppercase; font-weight: 600;">Corpus Size</div>
-                        <div style="color: #4ade80; font-size: 1.15rem; font-weight: 700; margin-top: 0.1rem;">5,574 <span style="font-size: 0.7rem; color: #cbd5e1; font-weight: 400;">SMS</span></div>
+                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.85rem 0.6rem; border: 1px solid rgba(148, 163, 184, 0.08); text-align: center;">
+                        <div style="color: #94a3b8; font-size: 0.78rem; text-transform: uppercase; font-weight: 600;">Corpus Size</div>
+                        <div style="color: #4ade80; font-size: 1.35rem; font-weight: 700; margin-top: 0.15rem;">5,574 <span style="font-size: 0.78rem; color: #cbd5e1; font-weight: 400;">SMS</span></div>
                     </div>
-                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.6rem 0.5rem; border: 1px solid rgba(148, 163, 184, 0.08); text-align: center;">
-                        <div style="color: #94a3b8; font-size: 0.68rem; text-transform: uppercase; font-weight: 600;">Max Vocab</div>
-                        <div style="color: #f472b6; font-size: 1.15rem; font-weight: 700; margin-top: 0.1rem;">2,500 <span style="font-size: 0.7rem; color: #cbd5e1; font-weight: 400;">Terms</span></div>
+                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.85rem 0.6rem; border: 1px solid rgba(148, 163, 184, 0.08); text-align: center;">
+                        <div style="color: #94a3b8; font-size: 0.78rem; text-transform: uppercase; font-weight: 600;">Max Vocab</div>
+                        <div style="color: #f472b6; font-size: 1.35rem; font-weight: 700; margin-top: 0.15rem;">2,500 <span style="font-size: 0.78rem; color: #cbd5e1; font-weight: 400;">Terms</span></div>
                     </div>
-                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.6rem 0.5rem; border: 1px solid rgba(148, 163, 184, 0.08); text-align: center;">
-                        <div style="color: #94a3b8; font-size: 0.68rem; text-transform: uppercase; font-weight: 600;">Deployment</div>
-                        <div style="color: #facc15; font-size: 1.15rem; font-weight: 700; margin-top: 0.1rem;">Cloud <span style="font-size: 0.7rem; color: #cbd5e1; font-weight: 400;">Ready</span></div>
+                    <div style="background: rgba(30, 41, 59, 0.55); border-radius: 10px; padding: 0.85rem 0.6rem; border: 1px solid rgba(148, 163, 184, 0.08); text-align: center;">
+                        <div style="color: #94a3b8; font-size: 0.78rem; text-transform: uppercase; font-weight: 600;">Deployment</div>
+                        <div style="color: #facc15; font-size: 1.35rem; font-weight: 700; margin-top: 0.15rem;">Cloud <span style="font-size: 0.78rem; color: #cbd5e1; font-weight: 400;">Ready</span></div>
                     </div>
                 </div>
+                <!--
                 <div style="background: rgba(96, 165, 250, 0.08); border-radius: 8px; padding: 0.5rem 0.75rem; border: 1px solid rgba(96, 165, 250, 0.15); font-size: 0.75rem; color: #cbd5e1; text-align: center;">
                     <strong>Pipeline Sequence:</strong> Clean → Tokenize → Stopwords → Stemming → Vectorize → Predict
                 </div>
+                -->
             </div>
             """,
             unsafe_allow_html=True,
