@@ -116,7 +116,8 @@ strat_cols[2].metric("Test Split Ratio", safe_percentage(APP_CONFIG.test_size), 
 
 st.divider()
 
-workflow_tab, architecture_tab, stack_tab = st.tabs(["Pipeline Workflow", "Project Architecture", "Technology Stack"])
+# workflow_tab, architecture_tab, stack_tab = st.tabs(["Pipeline Workflow", "Project Architecture", "Technology Stack"])
+workflow_tab, stack_tab = st.tabs(["Pipeline Workflow", "Technology Stack"])
 
 with workflow_tab:
     col_a, col_b = st.columns(2)
@@ -151,41 +152,41 @@ Output Class & Confidence Badge""",
             st.markdown(f"**{feature_name.upper()}**")
             st.caption(description)
 
-with architecture_tab:
-    arch_left, arch_right = st.columns(2)
-    with arch_left:
-        st.markdown("### Component Specifications")
-        st.markdown(
-            """
-            <div class='panel'>
-                <ul>
-                    <li><strong>app.py:</strong> Entry point for Streamlit rendering.</li>
-                    <li><strong>src/preprocessing.py:</strong> Thread-safe text cleaning and normalization.</li>
-                    <li><strong>src/feature_extraction.py:</strong> Loads and fits text representation vectorizers.</li>
-                    <li><strong>src/train.py:</strong> Executes estimators training workflows.</li>
-                    <li><strong>src/predict.py:</strong> Serves real-time inference.</li>
-                    <li><strong>src/evaluation.py:</strong> Evaluates metrics on held-out splits.</li>
-                </ul>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-    with arch_right:
-        st.markdown("### Repository Layout")
-        st.code(
-            """SpamSense-AI/
-├── app.py
-├── pages/
-├── src/
-├── assets/
-├── data/
-├── models/
-├── vectorizers/
-├── notebooks/
-├── README.md
-└── requirements.txt""",
-            language="text",
-        )
+# with architecture_tab:
+#     arch_left, arch_right = st.columns(2)
+#     with arch_left:
+#         st.markdown("### Component Specifications")
+#         st.markdown(
+#             """
+#             <div class='panel'>
+#                 <ul>
+#                     <li><strong>app.py:</strong> Entry point for Streamlit rendering.</li>
+#                     <li><strong>src/preprocessing.py:</strong> Thread-safe text cleaning and normalization.</li>
+#                     <li><strong>src/feature_extraction.py:</strong> Loads and fits text representation vectorizers.</li>
+#                     <li><strong>src/train.py:</strong> Executes estimators training workflows.</li>
+#                     <li><strong>src/predict.py:</strong> Serves real-time inference.</li>
+#                     <li><strong>src/evaluation.py:</strong> Evaluates metrics on held-out splits.</li>
+#                 </ul>
+#             </div>
+#             """,
+#             unsafe_allow_html=True,
+#         )
+#     with arch_right:
+#         st.markdown("### Repository Layout")
+#         st.code(
+#             """SpamSense-AI/
+# ├── app.py
+# ├── pages/
+# ├── src/
+# ├── assets/
+# ├── data/
+# ├── models/
+# ├── vectorizers/
+# ├── notebooks/
+# ├── README.md
+# └── requirements.txt""",
+#             language="text",
+#         )
 
 with stack_tab:
     st.markdown("### Production Technology Stack")
